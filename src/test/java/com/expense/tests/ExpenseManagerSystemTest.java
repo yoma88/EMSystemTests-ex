@@ -54,7 +54,7 @@ public class ExpenseManagerSystemTest {
 		
         if(result.getStatus() == ITestResult.FAILURE) {
         	BasicCredentials cred = new BasicCredentials("verityamazon10", "Password@1");
-        	JiraClient jira = new JiraClient("http://100.25.133.40:8080/", cred);
+        	JiraClient jira = new JiraClient("http://54.237.14.145:8080/", cred);
         	Issue issueName = jira.createIssue("AUT", "Bug").field(Field.SUMMARY, result.getMethod().getMethodName() +"is failed due to: "+ result.getThrowable().toString()).field(Field.DESCRIPTION, "get the description").execute();
         	System.out.println("Issue is created in Jira with Issue Key: "+issueName.getKey());
         }
