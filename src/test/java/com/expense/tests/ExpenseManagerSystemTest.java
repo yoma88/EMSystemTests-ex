@@ -53,8 +53,12 @@ public class ExpenseManagerSystemTest {
 		driver.quit();
 		
         if(result.getStatus() == ITestResult.FAILURE) {
-        	BasicCredentials cred = new BasicCredentials("verityamazon10", "Password@1");
+			//You need to give your JIRA Username and Password in below line
+        	BasicCredentials cred = new BasicCredentials("", "");
+			
+			//You need to update your JIRA machine IP address with port 8080 in below line
         	JiraClient jira = new JiraClient("http://54.237.14.145:8080/", cred);
+			
         	Issue issueName = jira.createIssue("AUT", "Bug").field(Field.SUMMARY, result.getMethod().getMethodName() +"is failed due to: "+ result.getThrowable().toString()).field(Field.DESCRIPTION, "get the description").execute();
         	System.out.println("Issue is created in Jira with Issue Key: "+issueName.getKey());
         }
