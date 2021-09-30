@@ -53,6 +53,7 @@ public class ExpenseManagerSystemTest {
 		driver.quit();
 		
         if(result.getStatus() == ITestResult.FAILURE) {
+			/*
 			//You need to enter your JIRA Username and Password in below line
         	BasicCredentials cred = new BasicCredentials("yoma88", "y0h@n1t@");
 			
@@ -62,6 +63,7 @@ public class ExpenseManagerSystemTest {
 			//You need to enter your JIRA project key in below line
         	Issue issueName = jira.createIssue("auto-bug-logging", "Bug").field(Field.SUMMARY, result.getMethod().getMethodName() +"is failed due to: "+ result.getThrowable().toString()).field(Field.DESCRIPTION, "get the description").execute();
         	System.out.println("Issue is created in Jira with Issue Key: "+issueName.getKey());
+			*/
         }
 
 	}
